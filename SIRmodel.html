@@ -13117,41 +13117,6 @@ div#notebook {
 
 
 
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello There. Click here then press ctrl + enter to run. I should print out&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Hello There. Click here then press ctrl + enter to run. I should print out
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-  </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="MODELLING-DISEASE-SPREAD-WITH-SYSTEM-OF-DIFFERENTIAL-EQUATIONS">MODELLING DISEASE SPREAD WITH SYSTEM OF DIFFERENTIAL EQUATIONS<a class="anchor-link" href="#MODELLING-DISEASE-SPREAD-WITH-SYSTEM-OF-DIFFERENTIAL-EQUATIONS">&#182;</a></h1>
@@ -13195,6 +13160,7 @@ dR/dt = k_2 I</p>
 <h3 id="Exercise-5">Exercise 5<a class="anchor-link" href="#Exercise-5">&#182;</a></h3><p>Write this as a system of differential equations of the form
 [dS, dI, dR]^T = A [S, I , R]^T</p>
 <p>Let's explore how this simple model works in real life.</p>
+<p>If you have python installed already follow along.</p>
 
 </div>
 </div>
@@ -13208,13 +13174,34 @@ dR/dt = k_2 I</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span> <span class="c1"># Optional</span>
+<span class="k">try</span><span class="p">:</span>
     <span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="k">except</span><span class="p">:</span>
     <span class="o">!</span>pip install matplotlib
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">nbinteract</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="o">!</span>pip install nbinteract
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">nbinteract</span> <span class="k">as</span> <span class="nn">nbi</span>
-<span class="c1"># Population of Minnesota in thousands</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Population of Minnesota in thousands</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">5300</span> 
 
 <span class="c1"># Number of S,I,R from 8/30-9/5 week</span>
@@ -13243,12 +13230,6 @@ dR/dt = k_2 I</p>
         <span class="n">total</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">eulerStep</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span><span class="n">i1</span><span class="p">,</span><span class="n">r1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">k1</span><span class="p">,</span><span class="n">k2</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">total</span>
         
-<span class="k">def</span> <span class="nf">setOpts</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">):</span>
-    <span class="k">return</span>  <span class="p">{</span>
-    <span class="s1">&#39;xlim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.1</span><span class="o">*</span><span class="nb">max</span><span class="p">(</span><span class="n">xs</span><span class="p">)),</span>
-    <span class="s1">&#39;ylim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.1</span><span class="o">*</span><span class="nb">max</span><span class="p">(</span><span class="n">ys</span><span class="p">)),</span>
-    <span class="s1">&#39;animation_duration&#39;</span><span class="p">:</span> <span class="mi">250</span><span class="p">,</span>
-    <span class="p">}</span>
 
 <span class="c1"># key : 0 for healthy </span>
 <span class="c1">#       1 for current sick</span>
@@ -13277,6 +13258,7 @@ dR/dt = k_2 I</p>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span><span class="n">rs</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="s2">&quot;green&quot;</span><span class="p">)</span>
 
+<span class="c1">#If you comment out interact in the last cell, comment out this too.</span>
 <span class="n">interact</span><span class="p">(</span><span class="n">plotter</span><span class="p">,</span> <span class="n">nWeeks</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">S0</span><span class="o">=</span><span class="n">S0</span><span class="p">,</span> <span class="n">I0</span><span class="o">=</span><span class="n">I0</span><span class="p">,</span> <span class="n">R0</span><span class="o">=</span><span class="n">R0</span><span class="p">,</span><span class="n">key</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">k1</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mf">0.05</span><span class="p">),</span> <span class="n">k2</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mf">0.05</span><span class="p">))</span>
 </pre></div>
 
@@ -13294,11 +13276,11 @@ dR/dt = k_2 I</p>
 
 
 
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
-"
->
-</div>
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
 
 </div>
 
@@ -13327,93 +13309,6 @@ You might want to try using actual data. If so <a href="&quot;https://www.health
 </div>
 </div>
 </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nbi</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="s1">&#39;CalvinRoth/SIRmodelImage/main&#39;</span><span class="p">,</span> <span class="s1">&#39;SIRmodel.ipynb&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    
-
-
-
-
-<div id="74bc7fb1-ef3b-4a7d-a65f-1420fc409e1c"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#74bc7fb1-ef3b-4a7d-a65f-1420fc409e1c');
-IPython.notebook.save_checkpoint();
-</script>
-</div>
-
-</div>
-
-<div class="output_area">
-
-    
-
-
-
-
-<div id="1e9811f0-73ad-4844-8dc6-5731035726f2"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#1e9811f0-73ad-4844-8dc6-5731035726f2');
-IPython.notebook.save_notebook();
-</script>
-</div>
-
-</div>
-
-<div class="output_area">
-
-    
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Saving notebook... Saved &#39;SIRmodel.ipynb&#39;.
-Converting notebook...
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<p>Successfully converted!</p>
-<p><a href="SIRmodel.html" target="_blank" download>Click to download your webpage.</a></p>
-<p>To host your webpage, see the documentation:
-<a href="https://www.nbinteract.com/tutorial/tutorial_publishing.html"
-        target="_blank">
-    https://www.nbinteract.com/tutorial/tutorial_publishing.html
-</a></p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-  </div>
 
 
 
