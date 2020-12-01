@@ -1,0 +1,86 @@
+<!-- <h2 {% if site.style == 'dark' %}class="text-white"{% endif %}>My Projects</h2>
+<p class="f4 mb-4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">GitHub repositories that I've built.</p>
+<div class="d-sm-flex flex-wrap gutter-condensed mb-4">
+  {% if site.projects.sort_by == 'stars' %}
+    {% assign sort_order = 'stargazers_count', 'last' %}
+  {% else %}
+    {% assign sort_order = 'pushed_at' %}
+  {% endif %}
+
+  {% if site.projects.exclude.archived && site.projects.exclude.forks %}
+    {% assign filtered_repos = site.github.public_repositories | where:'archived', false | where:'fork', false | sort: sort_order | reverse %}
+  {% elsif site.projects.exclude.archived %}
+    {% assign filtered_repos = site.github.public_repositories | where:'archived', false | sort: sort_order | reverse %}
+  {% elsif site.projects.exclude.forks %}
+    {% assign filtered_repos = site.github.public_repositories | where:'fork', false | sort: sort_order | reverse %}
+  {% else %}
+    {% assign filtered_repos = site.github.public_repositories | sort: sort_order | reverse %}
+  {% endif %}
+
+  {% for repository in filtered_repos | limit: site.projects.limit %}
+    {% unless site.projects.exclude.projects contains repository.name %}
+      <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4 mb-3">
+        {% include repo-card.html %}
+      </div>
+    {% endunless %}
+  {% endfor %}
+</div>
+-->
+
+<div style="color:white">
+<h1>
+    About Me
+</h1>
+<p>
+	I am beginning a master's in computer science this fall following a double major in mathematics and computer science. I am interested in crytography, high performance computing, and compilers. My standing career goal is to do computer science research, and currently I am setting my trajectory to do a research oriented masters and hopefully follow that my a PhD.
+</p>
+<a style = "text-white" href = "https://github.com/CalvinRoth/"> Link to actual github page </a>
+<h1>
+    Projects
+
+  <h3>
+     Quantum Key distrubtion
+  </h3>
+  <p>
+     This was the work that came off my REU work in summer 2019. In this analyzed the allowable noise rate of various Quantum and Semi Quantum key distrubtion 
+     protocols. This notably involved creating python and c++ programs to compute the various numerical results basbed on bounds I was able to derive.
+     From this work me and the researchers at the University of Connecticut plan to publish sometime in spring the
+     following paper: O. Amer, C. Roth, W.O. Krawec "Mismatched Measurements and Finite Key Effects on Semi-Quantum Cryptography
+     View the report I made <a href = "../assets/REU_Final.pdf"> here </a>
+  </p>
+
+  <h3>
+    Honors Thesis
+  </h3>
+  <p>
+    My honors thesis which was in the math department gave a survey modern day factoring and primality algorithms and the mathematics that went into them. This has clear connections to cryptography but is interesting in its own right. In particular, I thought that the quadratic sieve and number field sieve are particularly interesting because of all the different areas of math they pull in with the connection between linear algebra and factoring an integer being the most surprising connection to me. The thesis can be found <a href = "../assets/Thesis.pdf"> here </a>. 
+  </p>
+  <h3>
+     Stroke Detection
+  </h3>
+  <p>
+    This was a project developed during a hackathon at John's Hopkins with the goal of using computer vision(opencv specifically) to detect if someone may be experiencing a stroke.
+    Many people are not aware they are having a stroke well they are having a stroke. By analyziing facial asymmetries of the features such as the mouth drooping, we can fairly accurately predict if somoneone is at risk of currently having a stroke. This is a proof of concept for a feature that code hypothetically be implemented in a facial recognition lock screen. <a href = "https://github.com/CalvinRoth/strokeapp" > Stroke Detection App </a>.
+  </p>
+  <h3>
+      DrawTex
+  </h3>
+    <p>
+      This is a more 'fun' project. The problem being solved here is that the primary Latex package to produce image, tikz, is tedious and just an overall pain to use in my experience. The first alternative is to draw an image in Paint or maybe google docs and import that into you latex document as a png. This isn't a good solution in my mind since we lose out on a lot of the pros using latex can offer just as very precisely moving things around in your image later since we have a static image. This lead me to the project I'm working doing working on just for fun, which is to draw a Painting application that allows one to draw geometric primitives like lines, rectangles, and ellispes and then export the result as runable latex code. Project is found here <a href = "https://github.com/CalvinRoth/DrawTex"> DrawTex </a>. 
+    </p>
+  <h3>
+  Miscellaneous
+  </h3>
+  <p>
+  	I have a couple school papers that I think qualify as interesting enough to be seen.
+	<ol>
+		<li> First up is a natural language processing semantic analysis project done for my intro to AI class
+                <a href = "https://github.com/CalvinRoth/NLPSentiment"> Github Page </a> </li>
+		<li> Next a paper on secure voting for my modern crytopgraphy class <a href  = "../assets/5471_Research_Paper.pdf"> Paper </a>. </li>
+		<li> A survey on Voronia Diagram research for computational Geometry <a href = "../assets/compGeo.pdf"> Paper </a>.</li>
+		<li> An attempt at computational biology for bioinformatics using data from a U of Mn bio lab <a href = "../assets/CompBio.pdf"> Paper </a>. </li>
+		<li> The final item isn't Computer Science Related but I liked making it. This is a paper on what are the key driviers of high housing costs in the US for my honors seminar 'housing matters' <a href = "../assets/HousingPaper.pdf"> Paper </a>. </li>
+	</ol>
+  </p>
+</hi>
+</div>

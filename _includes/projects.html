@@ -1,0 +1,42 @@
+<div class="trial1">
+<h2 {% if site.style == 'dark' %}class="text-white"{% endif %}>About Me</h2>
+<h2 {% if site.style == 'dark' %}class="text-white"{% endif %}>Some Selected Non-Class Projects</h2>
+<p class="f4 mb-4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">GitHub repositories that I've built not for a class</p>
+<div class="d-sm-flex flex-wrap gutter-condensed mb-4">
+  {% if site.projects.sort_by == 'stars' %}
+    {% assign sort_order = 'stargazers_count', 'last' %}
+  {% else %}
+    {% assign sort_order = 'pushed_at' %}
+  {% endif %}
+
+  {% if site.projects.exclude.archived && site.projects.exclude.forks %}
+    {% assign filtered_repos = site.github.public_repositories | where:'archived', false | where:'fork', false | sort: sort_order | reverse %}
+  {% elsif site.projects.exclude.archived %}
+    {% assign filtered_repos = site.github.public_repositories | where:'archived', false | sort: sort_order | reverse %}
+  {% elsif site.projects.exclude.forks %}
+    {% assign filtered_repos = site.github.public_repositories | where:'fork', false | sort: sort_order | reverse %}
+  {% else %}
+    {% assign filtered_repos = site.github.public_repositories | sort: sort_order | reverse %}
+  {% endif %}
+
+  {% for repository in filtered_repos | limit: site.projects.limit %}
+    {% unless site.projects.exclude.projects contains repository.name %}
+      <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4 mb-3">
+        {% include repo-card.html %}
+      </div>
+    {% endunless %}
+  {% endfor %}
+</div>
+<h2 {% if site.style == 'dark' %}class="text-white"{% endif %}>Class Papers</h2>
+<a {% if site.style == 'dark' %}class="text-white"{% endif %}> A curated list of some of the class papers I've written that I like </a>
+<p {% if site.style == 'dark'%} class="text-white"{% endif %} >
+  <ol class="text-white">
+    <li> First up is a natural language processing semantic analysis project done for my intro to AI class
+                <a href = "https://github.com/CalvinRoth/NLPSentiment"> Github Page </a> </li>
+    <li> Next a paper on secure voting for my modern crytopgraphy class <a href  = "../assets/5471_Research_Paper.pdf"> Paper </a>. </li>
+    <li> A survey on Voronia Diagram research for computational Geometry <a href = "../assets/compGeo.pdf"> Paper </a>.</li>
+    <li> An attempt at computational biology for bioinformatics using data from a U of Mn bio lab <a href = "../assets/CompBio.pdf"> Paper </a>. </li>
+    <li> The final item isn't Computer Science Related but I liked making it. This is a paper on what are <\br> the key driviers of high housing costs in the US for my honors seminar 'housing matters' <a href = "../assets/HousingPaper.pdf"> Paper </a>. </li>
+  </ol>
+</p>
+</div>
