@@ -5,7 +5,7 @@ permalink: /publication/2023-12-08-peer-filtering
 excerpt: ''
 date: 2023-10-08
 venue: 'Under Review'
-paperurl: 'http://calvinroth.tech/assets/papers/Algorithmic_Mechanisms_For_Countering_Misinformation.pdf'
+paperurl: 'http://calvinroth.github.io/assets/papers/Algorithmic_Mechanisms_For_Countering_Misinformation.pdf'
 citation: 'Ankur Mani, Krishnamurthy Iyer, Calvin Roth(2023). &quot;Peer Filtering &quot; <i>Under Review</i>. 1(3).'
 ---
 
