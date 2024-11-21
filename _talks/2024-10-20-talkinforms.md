@@ -2,7 +2,7 @@
 title: "Peer Filtering: Democratic Misinformation Control in Social Networks"
 collection: talks
 type: "Talk"
-permalink: '/talks/talk-1'
+permalink: '/talks/talkinforms'
 paperurl: ''
 venue: "INFORMs"
 date: 2024-10-21
