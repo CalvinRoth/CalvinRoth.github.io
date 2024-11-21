@@ -3,7 +3,7 @@ title: "The Value of Community Information for
 Pricing Under Network Externalities"
 collection: publications
 permalink: /publication/network_value
-excerpt: ''
+excerpt: 'Work in progress'
 date: 2023-12-08
 venue: 'Informs'
 paperurl: 
