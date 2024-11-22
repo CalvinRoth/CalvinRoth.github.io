@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Calvin Roth"
 title_separator          : "-"
 name                     : &name "Calvin Roth"
-description              : &description "2nd Year PhD student at University of Minnesota studying ISYe"
+description              : &description "3rd Year PhD student at University of Minnesota studying ISYe"
 url                      : https://CalvinRoth.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "CalvinRoth/CalvinRoth.github.io"
@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Calvin Roth"
   avatar           : "profile_cropped.jpg"
-  bio              : "2nd Year PhD student at University of Minnesota in the ISYe department."
+  bio              : "3rd Year PhD student at University of Minnesota in the ISYe department."
   location         : "Minneapolis, Minnesota"
   employer         :
   pubmed           : 
@@ -109,7 +109,7 @@ author:
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "CalvinRoth8"
+  twitter          : 
   vine             :
   weibo            :
   xing             :
@@ -180,7 +180,7 @@ collections:
     permalink: /:collection/:path/
   publications:
     output: true
-    permalink: /:collection/:path/
+    #permalink: /:collection/:path/
   portfolio:
     output: false
     permalink: /:collection/:path/
