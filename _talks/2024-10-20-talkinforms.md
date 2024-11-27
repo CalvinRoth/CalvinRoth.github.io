@@ -6,7 +6,7 @@ permalink: '/talks/2024-10-20-talkinforms.md'
 paperurl: ''
 venue: "INFORMs"
 date: 2024-10-21
-excerpt: 'Informs 2024 talk. [Download here](https://calvinroth.github.io/assets/talks/2024_peers.pdf)'
+excerpt: 'Informs 2024 talk. [Download here](https://calvinroth.github.io/assets/talks/2024-peers.pdf)'
 
 location: "Seattle, Washington"
 ---
