@@ -6,7 +6,6 @@ permalink: /publication/network_value
 excerpt: 'This work demonstrates the existence of random graphs in which the value of price discrimination is non-neglible but a small amount of information of the network is sufficient for near optimal pricing  
 Presented at: 2023 INFORMS Conference, 2024 Revenue Management Conference'
 date: 2023-12-08
-venue: 'Informs'
 paperurl: 
 ---
 

@@ -7,7 +7,6 @@ excerpt: 'This work is about the phenomon of peer filtering, a natural effect wh
 [Download paper here](http://calvinroth.github.io/assets/papers/Algorithmic_Mechanisms_For_Countering_Misinformation.pdf)
 
 Presented at: 2024 INFORMS Conference, 2024 International School and Conference on Network Science(NetSci), 2024 Conference on Network Science and Economics'
-date: 2023-10-08
 venue: 
 paperurl: 
 ---
